@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salud Vital - Consultorio Médico</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-tl from-purple-400 to-pink-300 min-h-screen flex justify-center items-center py-10">
+    <div class="container bg-white rounded-lg shadow-md p-8 w-4/5 max-w-2xl">
+        <h1 class="text-2xl font-semibold text-center text-blue-600 mb-6">Salud Vital - Registro de Pacientes y Citas</h1>
+
+        <form id="registroForm" class="space-y-4">
+            <div>
+                <h2 class="text-lg font-semibold text-gray-700 mb-2">Datos del Paciente</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label for="nombreCompleto" class="block text-gray-700 text-sm font-bold mb-2">Nombre Completo:</label>
+                        <input type="text" id="nombreCompleto" name="nombreCompleto" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+                    <div>
+                        <label for="edad" class="block text-gray-700 text-sm font-bold mb-2">Edad:</label>
+                        <input type="number" id="edad" name="edad" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+                    <div>
+                        <label for="sexo" class="block text-gray-700 text-sm font-bold mb-2">Sexo:</label>
+                        <select id="sexo" name="sexo" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                            <option value="">Seleccione...</option>
+                            <option value="masculino">Masculino</option>
+                            <option value="femenino">Femenino</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="tipoSangre" class="block text-gray-700 text-sm font-bold mb-2">Tipo de Sangre:</label>
+                        <input type="text" id="tipoSangre" name="tipoSangre" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+                    <div>
+                        <label for="ocupacion" class="block text-gray-700 text-sm font-bold mb-2">Ocupación:</label>
+                        <input type="text" id="ocupacion" name="ocupacion" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+                    <div>
+                        <label for="estadoCivil" class="block text-gray-700 text-sm font-bold mb-2">Estado Civil:</label>
+                        <select id="estadoCivil" name="estadoCivil" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                            <option value="">Seleccione...</option>
+                            <option value="soltero">Soltero/a</option>
+                            <option value="casado">Casado/a</option>
+                            <option value="divorciado">Divorciado/a</option>
+                            <option value="viudo">Viudo/a</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="numeroContacto" class="block text-gray-700 text-sm font-bold mb-2">Número de Contacto:</label>
+                        <input type="tel" id="numeroContacto" name="numeroContacto" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+                    <div>
+                        <label for="correoElectronico" class="block text-gray-700 text-sm font-bold mb-2">Correo Electrónico:</label>
+                        <input type="email" id="correoElectronico" name="correoElectronico" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h2 class="text-lg font-semibold text-gray-700 mb-2">Datos de la Cita</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label for="motivoCita" class="block text-gray-700 text-sm font-bold mb-2">Motivo de la Cita:</label>
+                        <input type="text" id="motivoCita" name="motivoCita" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+                    <div>
+                        <label for="tipoEnfermedad" class="block text-gray-700 text-sm font-bold mb-2">Tipo de Enfermedad (si aplica):</label>
+                        <input type="text" id="tipoEnfermedad" name="tipoEnfermedad" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+                    <div>
+                        <label for="nivelUrgencia" class="block text-gray-700 text-sm font-bold mb-2">Nivel de Urgencia:</label>
+                        <select id="nivelUrgencia" name="nivelUrgencia" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                            <option value="">Seleccione...</option>
+                            <option value="urgente">Urgente</option>
+                            <option value="alta">Alta</option>
+                            <option value="media">Media</option>
+                            <option value="baja">Baja</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="fechaHoraDeseada" class="block text-gray-700 text-sm font-bold mb-2">Fecha y Hora Deseada:</label>
+                        <input type="datetime-local" id="fechaHoraDeseada" name="fechaHoraDeseada" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="bg-gradient-to-r from-green-400 to-blue-500 hover:from-green-500 hover:to-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full">
+                Registrar y Solicitar Cita
+            </button>
+        </form>
+
+        <div id="mensaje" class="mt-6 text-center text-green-600 font-semibold hidden">
+            ¡Registro y solicitud de cita realizados con éxito!
+        </div>
+        <div id="errores" class="mt-6 text-center text-red-600 font-semibold hidden">
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('registroForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const nombreCompleto = document.getElementById('nombreCompleto').value;
+            const edad = document.getElementById('edad').value;
+            const sexo = document.getElementById('sexo').value;
+            const tipoSangre = document.getElementById('tipoSangre').value;
+            const ocupacion = document.getElementById('ocupacion').value;
+            const estadoCivil = document.getElementById('estadoCivil').value;
+            const numeroContacto = document.getElementById('numeroContacto').value;
+            const correoElectronico = document.getElementById('correoElectronico').value;
+            const motivoCita = document.getElementById('motivoCita').value;
+            const tipoEnfermedad = document.getElementById('tipoEnfermedad').value;
+            const nivelUrgencia = document.getElementById('nivelUrgencia').value;
+            const fechaHoraDeseada = document.getElementById('fechaHoraDeseada').value;
+
+            const mensajeElement = document.getElementById('mensaje');
+            const erroresElement = document.getElementById('errores');
+            erroresElement.classList.add('hidden');
+
+            // Validación básica (puedes agregar validaciones más robustas)
+            if (!nombreCompleto || !edad || !sexo || !ocupacion || !estadoCivil || !numeroContacto || !correoElectronico || !motivoCita || !nivelUrgencia || !fechaHoraDeseada) {
+                erroresElement.textContent = "Por favor, complete todos los campos obligatorios.";
+                erroresElement.classList.remove('hidden');
+                return; // Detiene el proceso si hay errores
+            }
+            if (edad < 0 || isNaN(edad)) {
+                erroresElement.textContent = "La edad debe ser un número positivo.";
+                erroresElement.classList.remove('hidden');
+                return;
+            }
+            const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+            if (!emailRegex.test(correoElectronico)) {
+                erroresElement.textContent = "El correo electrónico no es válido.";
+                erroresElement.classList.remove('hidden');
+                return;
+            }
+
+
+            // Si la validación pasa, muestra el mensaje de éxito (y podrías enviar los datos a un servidor)
+            mensajeElement.classList.remove('hidden');
+            document.getElementById('registroForm').reset(); // Opcional: limpiar el formulario
+        });
+    </script>
+</body>
+</html>
